@@ -6,13 +6,39 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 # Common English stop words
-STOP_WORDS = {'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
-              'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'was', 'were',
-              'will', 'with'}
+STOP_WORDS = {
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "be",
+    "by",
+    "for",
+    "from",
+    "has",
+    "he",
+    "in",
+    "is",
+    "it",
+    "its",
+    "of",
+    "on",
+    "that",
+    "the",
+    "to",
+    "was",
+    "were",
+    "will",
+    "with",
+}
+
 
 def tokenize(text, pattern=r"\s"):
     """Split text into tokens based on regex pattern."""
     return [t for t in re.split(pattern, text) if t]
+
 
 class CorpusCounter:
     """Tracks word counts in a corpus of documents."""
@@ -36,7 +62,7 @@ class CorpusCounter:
 
     def get_counts(self):
         """Return token counts as a DataFrame."""
-        return pd.DataFrame(self.counter.items(), columns=['token', 'count']).sort_values('token')
+        return pd.DataFrame(self.counter.items(), columns=["token", "count"]).sort_values("token")
 
     def save_counts(self, csv_path):
         """Save token counts to CSV."""
