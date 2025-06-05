@@ -39,3 +39,8 @@ You should also add project tags for each release in Github, see [Managing relea
 - Sample text data from Project Gutenberg
 - Data Version Control stage for the corpus_counter_script.py
 - A sample Jupyter notebook that plots most frequent words the Gutenberg data
+
+## [3.0.0] - 2025-06-5
+## Added
+- A new function (stop words) in the cdstemplate package
+- Added a unit test for the new function
